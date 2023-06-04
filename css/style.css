@@ -41,6 +41,7 @@ body {
   font-size: 1.6rem;
   font-family: "";
   cursor: pointer;
+	touch-action: manipulation;
 }
 
 header {
@@ -108,7 +109,7 @@ button {
 .button-wrapper {
 	width: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	margin-bottom: 5.0rem;
 }
 
@@ -118,7 +119,7 @@ button {
 }
 
 .target-wrapper {
-	width: 100%;
+	width: 50%;
 	height: fit-content;
 	display: flex;
 	flex-direction: column;

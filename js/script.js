@@ -11,12 +11,9 @@ let count = 0;
 btnIncrement.addEventListener("click", () => {
 	count++;
 	btnIncrement.textContent = count;
-});
-
-btnIncrement.addEventListener("mouseover", () => {
 	btnIncrement.classList.add("show");
 });
 
-btnIncrement.addEventListener("mouseout", () => {
+btnIncrement.addEventListener("pointerout", () => {
 	btnIncrement.classList.remove("show");
 });
