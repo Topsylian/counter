@@ -199,11 +199,10 @@ button.show::after{
 	top: 35%;
 	left: -100%;
 	overflow-x: hidden;
-	transition: 500ms ease-in;
+	transition: 850ms ease-in-out;
 	background-color: var(--dull-black);
 	padding: 2.5rem 0 0;
 	border-radius: 1.5rem;
-	border: 1px solid;
 }
 
 .set-target {
