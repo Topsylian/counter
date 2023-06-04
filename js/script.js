@@ -6,6 +6,8 @@ const main = document.querySelector("main");
 const btnIncrement = document.querySelector(".count-up");
 const btnDecrement = document.querySelector(".count-down");
 const restart = document.querySelector(".reset");
+const setBtn = document.querySelector(".set-button");
+const setChoice = document.querySelector(".set-target");
 const show = document.querySelector(".target-show");
 
 let counter = 0;
@@ -52,6 +54,15 @@ function reset() {
 }
 
 restart.addEventListener("click", reset);
+
+function showSet() {
+	setChoice.style.visibility = "visible";
+	localStorage.setItem("body", "flex");
+	const stickIt = localStorage.getItem("body");
+	body.classList.add(stickIt);
+}
+
+setBtn.addEventListener("click", showSet);
 
 /*
 if (localStorage.getItem("counter")) {

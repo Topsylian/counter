@@ -11,7 +11,7 @@
 }
 
 :root {
-  --secondary: #d5dcfc;
+  --secondary: #ffffff;
   --accent: #ece5dd;
   --primary: #4f5255;
 	--dull-black: #00140e;
@@ -104,6 +104,7 @@ button {
   height: 100vh;
   padding: 2% 2%;
   cursor: pointer;
+	position: relative;
 }
 
 .button-wrapper {
@@ -111,6 +112,7 @@ button {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 5.0rem;
+	padding: 2%;
 }
 
 .display-wrapper {
@@ -119,7 +121,7 @@ button {
 }
 
 .target-wrapper {
-	width: 50%;
+	width: fit-content;
 	height: fit-content;
 	display: flex;
 	flex-direction: column;
@@ -180,6 +182,89 @@ button.show::after{
 
 .count-down {
 	position: absolute;
-	bottom: -50%;
+	bottom: -30%;
 	left: 10%;
+}
+
+.set-target {
+	width: 80%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5rem;
+	position: absolute;
+	z-index: 2;
+	top: 35%;
+	left: -100%;
+	overflow-x: hidden;
+	transition: 500ms ease-in;
+	background-color: var(--dull-black);
+	padding: 2.5rem 0 0;
+	border-radius: 1.5rem;
+	border: 1px solid;
+}
+
+.set-target {
+	visibility: hidden;
+}
+
+body.flex .set-target {
+	width: 80%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5rem;
+	position: absolute;
+	z-index: 2;
+	top: 35%;
+	left: 10%;
+	overflow-x: hidden;
+	transition: 500ms ease-in;
+	background-color: var(--dull-black);
+	padding: 2.5rem 0 0;
+	border-radius: 1.5rem;
+	border: 1px solid;
+}
+
+.set-target > h3 {
+	font-family: var(--inter);
+}
+
+.choice {
+	width: 100%;
+	padding: 1.5rem;
+	gap: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.choice button {
+	width: 40%;
+	height: 5.0rem;
+	border-radius: 1rem;
+	border: 1px solid var(--secondary);
+	color: var(--secondary);
+}
+
+.choice button:hover {
+	background-color: var(--accent-two);
+	color: var(--dull-black);
+	border: 1px solid var(--accent-two);
+}
+
+button.done {
+	width: 100%;
+	border-radius: 0rem;
+	border: 0px solid transparent;
+	background-color: var(--accent-two);
+	color: var(--secondary);
+}
+/*
+.set-target {
+	visibility: hidden;
 }
