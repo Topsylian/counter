@@ -245,14 +245,14 @@ body.flex .set-target {
 	width: 40%;
 	height: 5.0rem;
 	border-radius: 1rem;
-	border: 1px solid var(--secondary);
+	border: transparent;
 	color: var(--secondary);
 }
 
 .choice button:hover {
 	background-color: var(--accent-two);
 	color: var(--dull-black);
-	border: 1px solid var(--accent-two);
+	border: transparent;
 }
 
 button.done {
@@ -266,3 +266,4 @@ button.done {
 .set-target {
 	visibility: hidden;
 }
+*/
