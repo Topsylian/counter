@@ -133,6 +133,7 @@ button {
 
 .target-wrapper > p {
 	width: 50%;
+	height: 4rem;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -144,6 +145,7 @@ p.target-show {
 	font-weight: 600;
 	color: var(--accent-two);
 	font-size: 2rem;
+	transition: 850ms ease-in-out;
 }
 
 .count-wrapper {
@@ -222,10 +224,11 @@ body.flex .set-target {
 	top: 35%;
 	left: 10%;
 	overflow-x: hidden;
-	transition: 500ms ease-in;
-	background-color: var(--primary);
+	transition: 850ms ease-in-out;
+	background-color: var(--dull-black);
 	padding: 2.5rem 0 0;
 	border-radius: 1.5rem;
+	box-shadow: -3px -3px 20px 0px rgba(49, 49, 49, 0.3), 3px 3px 20px 0px rgba(49, 49, 49, 0.3);
 }
 
 .set-target > h3 {
@@ -245,14 +248,14 @@ body.flex .set-target {
 	width: 40%;
 	height: 5.0rem;
 	border-radius: 1rem;
-	border: transparent;
+	border: 1px solid;
 	color: var(--secondary);
 }
 
 .choice button:hover {
 	background-color: var(--accent-two);
 	color: var(--dull-black);
-	border: transparent;
+	border: 1px solid var(--accent-two);
 }
 
 button.done {
@@ -260,7 +263,7 @@ button.done {
 	border-radius: 0rem;
 	border: 0px solid transparent;
 	background-color: var(--accent-two);
-	color: var(--secondary);
+	color: var(--primary);
 }
 /*
 .set-target {

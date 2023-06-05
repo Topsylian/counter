@@ -8,58 +8,115 @@ const btnDecrement = document.querySelector(".count-down");
 const restart = document.querySelector(".reset");
 const setBtn = document.querySelector(".set-button");
 const setChoice = document.querySelector(".set-target");
+
+const targetHundred = document.querySelector(".hundred");
+const targetThousand = document.querySelector(".thousand");
+const targetThirty = document.querySelector(".thirty");
+
+const done = document.querySelector(".done");
 const show = document.querySelector(".target-show");
 
 let counter = 0;
+let firstTargetNumber = 100;
+let secondTargetNumber = 1000;
+let thirdTargetNumber = 33;
 
 if (localStorage.getItem("counter")) {
-	counter = parseInt(localStorage.getItem("counter"));
+  counter = parseInt(localStorage.getItem("counter"));
 }
 
 btnIncrement.textContent = counter;
 
 btnIncrement.addEventListener("click", () => {
-	counter++;
-	localStorage.setItem("counter", counter.toString());
+  counter++;
+  localStorage.setItem("counter", counter.toString());
 
-	btnIncrement.textContent = counter;
-	btnIncrement.classList.add("show");
-	btnDecrement.removeAttribute("disabled");
+  btnIncrement.textContent = counter;
+  btnIncrement.classList.add("show");
+  btnDecrement.removeAttribute("disabled");
 });
 
 btnDecrement.addEventListener("click", () => {
-	localStorage.setItem("counter", counter.toString());
-	counter--;
+  localStorage.setItem("counter", counter.toString());
+  counter--;
 
-	localStorage.setItem("counter", counter.toString());
+  localStorage.setItem("counter", counter.toString());
 
-	btnIncrement.textContent = counter;
-	if (counter === 0) {
-		btnDecrement.disabled = true;
-	}
+  btnIncrement.textContent = counter;
+  if (counter === 0) {
+    btnDecrement.disabled = true;
+  }
 });
 
 if (counter === 0) {
-	btnDecrement.disabled = true;
+  btnDecrement.disabled = true;
 }
 
 function reset() {
-	counter = 0;
+  counter = 0;
 
-	localStorage.setItem("counter", counter.toString());
-	btnIncrement.textContent = counter;
-	if (counter === 0) {
-		btnDecrement.disabled = true;
-	}
+  localStorage.setItem("counter", counter.toString());
+  btnIncrement.textContent = counter;
+  if (counter === 0) {
+    btnDecrement.disabled = true;
+  }
+}
+restart.addEventListener("click", reset);
+
+if (localStorage.getItem("firstTarget")) {
+  firstTargetNumber = parseInt(localStorage.getItem("firstTarget"));
 }
 
-restart.addEventListener("click", reset);
+show.textContent = firstTargetNumber;
+targetHundred.addEventListener("click", function () {
+  firstTargetNumber = 100;
+
+  localStorage.setItem("firstTarget", firstTargetNumber.toString());
+
+  show.textContent = firstTargetNumber;
+});
+
+if (localStorage.getItem("firstTarget")) {
+  firstTargetNumber = parseInt(localStorage.getItem("firstTarget"));
+}
+
+show.textContent = firstTargetNumber;
+targetThousand.addEventListener("click", function () {
+  firstTargetNumber = 1000;
+
+  localStorage.setItem("firstTarget", firstTargetNumber.toString());
+
+  show.textContent = firstTargetNumber;
+});
+
+if (localStorage.getItem("firstTarget")) {
+  firstTargetNumber = parseInt(localStorage.getItem("firstTarget"));
+}
+
+show.textContent = firstTargetNumber;
+targetThirty.addEventListener("click", function () {
+  firstTargetNumber = 33;
+
+	localStorage.setItem("firstTarget", firstTargetNumber.toString());
+
+  show.textContent = firstTargetNumber;
+});
+
+done.addEventListener("click", function () {
+  localStorage.removeItem("flex");
+  setChoice.style.left = "-100%";
+});
+
+localStorage.setItem("display", "flex");
 
 function showSet() {
 	setChoice.style.visibility = "visible";
-	localStorage.setItem("body", "flex");
-	const stickIt = localStorage.getItem("body");
-	body.classList.add(stickIt);
+	setChoice.style.left = "10%";
+	body.classList.add(localStorage.getItem("display"));
+}
+
+if (localStorage.getItem("display")) {
+	body.classList.add(localStorage.getItem("display"));
 }
 
 setBtn.addEventListener("click", showSet);
